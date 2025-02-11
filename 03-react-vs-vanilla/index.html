@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02</title>
+  </head>
+  <body>
+    <div id="reactApp"></div>
+    <div id="vanillaApp"></div>
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+      const reactHeading = React.createElement('h1', null, 'Hello from React');
+      const container = document.getElementById('reactApp');
+      const root = ReactDOM.createRoot(container);
+      root.render(reactHeading);
+    </script>
+    <script>
+      const vanillaHeading = document.createElement('h1');
+      vanillaHeading.textContent = 'Hello from Vanilla JS';
+      document.getElementById('vanillaApp').appendChild(vanillaHeading);
+    </script>
+  </body>
+</html>
+
+<!-- https://unpkg.com/react-dom@18/umd/react-dom.development.js -->
+<!-- https://unpkg.com/babel-standalone@6/babel.min.js -->
