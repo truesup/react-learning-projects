@@ -1,7 +1,6 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import courses from '../data/courses';
 import { useEffect } from 'react';
-// import NotFound from './NotFound';
+import courses from '../data/courses';
 
 const SingleCourse = () => {
   const params = useParams();
@@ -12,11 +11,7 @@ const SingleCourse = () => {
     if (!course) {
       navigate('..', { relative: 'path' });
     }
-  }, [course]);
-
-  // if (!course) {
-  //   return <NotFound />;
-  // }
+  }, [course, navigate]);
 
   return (
     <>
