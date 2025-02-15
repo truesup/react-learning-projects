@@ -38,3 +38,10 @@ nav a {
   margin: 8px;
   text-decoration: none;
 }
+.courseLink {
+  font-size: 22px;
+  text-decoration: none;
+}
+.courseLink:hover {
+  text-decoration: underline;
+}

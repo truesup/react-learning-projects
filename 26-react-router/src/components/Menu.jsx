@@ -8,6 +8,9 @@ const Menu = () => {
       <NavLink className={toggleActive} to="." end>
         Home
       </NavLink>
+      <NavLink className={toggleActive} to="courses">
+        Courses
+      </NavLink>
       <NavLink className={toggleActive} to="about">
         About
       </NavLink>
