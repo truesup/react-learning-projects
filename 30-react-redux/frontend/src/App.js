@@ -23,6 +23,3 @@ function App() {
 }
 
 export default App
-
-// react - redux@8.1.2
-// @reduxjs/toolkit@1.9.5
