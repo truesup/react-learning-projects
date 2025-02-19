@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import axios from 'axios'
 import { addBook } from '../../redux/slices/booksSlice'
 import createBookWithID from '../../utils/createBookWithID'
 import booksData from '../../data/books.json'
@@ -23,6 +24,17 @@ const BookForm = () => {
       dispatch(addBook(createBookWithID({ title, author })))
       setTitle('')
       setAuthor('')
+    }
+  }
+
+  const handleAddRandomBookViaAPI = async () => {
+    try {
+      const response = await axios.get('http://localhost:4000/random-book')
+      if (response?.data?.title && response?.data?.author) {
+        dispatch(addBook(createBookWithID(response.data)))
+      }
+    } catch (error) {
+      console.log(`Error fetching random book: ${error}`)
     }
   }
 
@@ -52,7 +64,10 @@ const BookForm = () => {
         </div>
         <button type="submit">Add Book</button>
         <button type="button" onClick={handleAddRandomBook}>
-          Add Random Book
+          Add random book
+        </button>
+        <button type="button" onClick={handleAddRandomBookViaAPI}>
+          Add random via API
         </button>
       </form>
     </div>
